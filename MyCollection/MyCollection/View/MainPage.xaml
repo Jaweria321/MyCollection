@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="Crimson"
+             Title="Album Collection"
+             x:Class="MyCollection.MainPage">
+
+    <StackLayout>
+        <Label x:Name="lblCollection"
+               Text="CollectionName"
+               HorizontalOptions="Center"
+               FontSize="Medium"
+               TextColor="White"
+               Margin="10" />
+    </StackLayout>
+
+</ContentPage>
