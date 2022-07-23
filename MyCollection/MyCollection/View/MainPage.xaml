@@ -7,11 +7,26 @@
 
     <StackLayout>
         <Label x:Name="lblCollection"
-               Text="CollectionName"
+               Text="{Binding CollectionName}"
                HorizontalOptions="Center"
                FontSize="Medium"
                TextColor="White"
                Margin="10" />
+
+        <ListView x:Name="AlbumListview" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView>
+                            <StackLayout VerticalOptions="Center" BackgroundColor="White" Margin="2">
+                                <Label Text="{Binding Title}" FontSize="Large" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" />
+                                <Label Text="{Binding Artist}" FontSize="Medium" TextColor="Black" VerticalOptions="Center" />
+                            </StackLayout>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
