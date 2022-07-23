@@ -1,4 +1,5 @@
-﻿using MyCollection.ViewModel;
+﻿using MyCollection.Model;
+using MyCollection.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,27 @@ namespace MyCollection
             await avm.GetAlbums();
             //AlbumListview is ListView name 
             AlbumListview.ItemsSource = avm.AlbumList;
+        }
+
+        private void AlbumListview_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                avm.SelectedAlbum = (AlbumModel)e.SelectedItem;
+                DisplayAlert(avm.SelectedAlbum.Title, avm.SelectedAlbum.Artist, "ok");
+            }
+        }
+
+        private async void btnName_Clicked(object sender, EventArgs e)
+        {
+
+
+            string result = await DisplayPromptAsync("Question 1", "What's your name?");
+            if(result != null)
+            {
+                avm.CollectionName = result;
+            }
+
         }
     }
 }

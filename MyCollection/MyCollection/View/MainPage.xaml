@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             BackgroundColor="Crimson"
              Title="Album Collection"
              x:Class="MyCollection.MainPage">
 
@@ -13,9 +12,15 @@
                TextColor="White"
                Margin="10" />
 
-        <ListView x:Name="AlbumListview" HasUnevenRows="True">
+        <ListView x:Name="AlbumListview" BackgroundColor="White" SeparatorColor="Aqua" HasUnevenRows="true" ItemSelected="AlbumListview_ItemSelected">
+            <!-- HasUnevenRows should be set to true if want to change height of list Items-->
             <ListView.ItemTemplate>
                 <DataTemplate>
+                    <ImageCell Height="60"
+                               Text="{Binding Title}"
+                               Detail="{Binding Artist}"
+                               ImageSource="{Binding Thumb}"/>
+                    <!--
                     <ViewCell>
                         <ContentView>
                             <StackLayout VerticalOptions="Center" BackgroundColor="White" Margin="2">
@@ -24,9 +29,22 @@
                             </StackLayout>
                         </ContentView>
                     </ViewCell>
+                    -->
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button 
+            x:Name="btnName"
+            Text="N"
+            HeightRequest="50"
+            WidthRequest="50"
+            BackgroundColor="White"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="24"
+            FontAttributes="Bold"
+            Clicked="btnName_Clicked"/>
     </StackLayout>
 
 </ContentPage>

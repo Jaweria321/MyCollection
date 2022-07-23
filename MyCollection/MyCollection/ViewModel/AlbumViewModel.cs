@@ -34,12 +34,14 @@ namespace MyCollection.ViewModel
             if ( AlbumList == null)
             {
                 AlbumList = new List<AlbumModel>();
-                AlbumList.Add(new AlbumModel("Volunteers", "Jefferson Airplane", "Box 1", "", "Rock"));
-                AlbumList.Add(new AlbumModel("Escape", "Journey", "Box 2", "", "Rock"));
-                AlbumList.Add(new AlbumModel("Exit", "Tangerine Dream", "Box 1", "", "Electronic"));
-                AlbumList.Add(new AlbumModel("Rumors", "Fleetwood Mac", "Box 2", "", "Rock"));
-                AlbumList.Add(new AlbumModel("LA Woman", "The Doors", "Box 1", "", "Rock"));
-                AlbumList.Add(new AlbumModel("Moving Pictures", "Rush", "Box 2", "", "Rock"));
+                AlbumList.Add(new AlbumModel("Volunteers", "Jefferson Airplane", "Box 1", "album1.jpg", "Rock"));
+                AlbumList.Add(new AlbumModel("Escape", "Journey", "Box 2", "album2.jpg", "Rock"));
+                AlbumList.Add(new AlbumModel("Exit", "Tangerine Dream", "Box 1", "album3.jpg", "Electronic"));
+                AlbumList.Add(new AlbumModel("Rumors", "Fleetwood Mac", "Box 2", "album4.jpg", "Rock"));
+                AlbumList.Add(new AlbumModel("LA Woman", "The Doors", "Box 1", "album5.jpg", "Rock"));
+                AlbumList.Add(new AlbumModel("Moving Pictures", "Rush", "Box 2", "album6.jpg", "Rock"));
+                AlbumList.Add(new AlbumModel("The Doors", "The Doors", "Box 1", "album7.jpg", "Rock"));
+
 
             }
             return true;
