@@ -4,9 +4,66 @@
              x:Class="MyCollection.View.AlbumInfoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <StackLayout>
+                <Label Text="Enter Album Information" />
+                <!-- tying Entry element named EntryArtist with Label Element -->
+                <Label BindingContext="{x:Reference EntryArtist}" Text="{Binding Path=Text}" />
+                <!-- tying Entry element named EntryThumb with Image Element -->
+                <Image  BindingContext="{x:Reference EntryThumb}" Source="{Binding Path=Text}"/>
+                <Entry x:Name="EntryTitle"
+                   Text="{Binding Title}"
+                   TextColor="Black"
+                   Placeholder="Title"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="White" />
+                <Entry x:Name="EntryArtist"
+                   Text="{Binding Artist}"
+                   TextColor="Black"
+                   Placeholder="Artist"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="White" />
+                <Entry x:Name="EntryLocation"
+                   Text="{Binding Location}"
+                   TextColor="Black"
+                   Placeholder="Location"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="White" />
+                <Entry x:Name="EntryThumb"
+                   Text="{Binding Thumb}"
+                   TextColor="Black"
+                   Placeholder="Thumb"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="White" />
+                <Entry x:Name="EntryGenre"
+                   Text="{Binding Genre}"
+                   TextColor="Black"
+                   Placeholder="Genre"
+                   PlaceholderColor="Gray"
+                   BackgroundColor="White" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20,0,20,0">
+                <Button x:Name="btnCancel"
+                        HeightRequest="40"
+                        CornerRadius="10"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        BackgroundColor="White"
+                        FontSize="14"
+                        Text="Cancel"
+                        TextColor="Black"
+                        Clicked="btnCancel_Clicked"/>
+                <Button x:Name="btnOk"
+                        Text="Ok"
+                        HeightRequest="40"
+                        CornerRadius="10"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                        BackgroundColor="White"
+                        FontSize="14"
+                        TextColor="Black"
+                        Clicked="btnOk_Clicked" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

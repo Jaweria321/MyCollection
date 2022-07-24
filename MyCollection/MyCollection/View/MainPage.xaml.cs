@@ -1,4 +1,5 @@
 ﻿using MyCollection.Model;
+using MyCollection.View;
 using MyCollection.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -26,17 +27,29 @@ namespace MyCollection
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            await avm.GetAlbums();
-            //AlbumListview is ListView name 
-            AlbumListview.ItemsSource = avm.AlbumList;
+            await RefreshListView();
         }
 
-        private void AlbumListview_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        public async Task<bool> RefreshListView()
+        {
+            //AlbumListview is ListView name 
+            AlbumListview.ItemsSource = null;
+            await avm.GetAlbums();
+            AlbumListview.ItemsSource = avm.AlbumList;
+            return true;
+        }
+
+        private async void AlbumListview_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
             {
                 avm.SelectedAlbum = (AlbumModel)e.SelectedItem;
-                DisplayAlert(avm.SelectedAlbum.Title, avm.SelectedAlbum.Artist, "ok");
+
+                // to open Full screen modals
+                //await Navigation.PushModalAsync(new ModalPage());
+                // to close Full screen modals
+                //await Navigation.PopModalAsync();
+                await Navigation.PushModalAsync(new AlbumInfoPage(avm));
             }
         }
 

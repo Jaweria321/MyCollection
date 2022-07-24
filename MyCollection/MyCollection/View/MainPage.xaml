@@ -12,7 +12,7 @@
                TextColor="White"
                Margin="10" />
 
-        <ListView x:Name="AlbumListview" BackgroundColor="White" SeparatorColor="Aqua" HasUnevenRows="true" ItemSelected="AlbumListview_ItemSelected">
+        <ListView x:Name="AlbumListview"  SeparatorColor="Aqua" HasUnevenRows="true" ItemSelected="AlbumListview_ItemSelected">
             <!-- HasUnevenRows should be set to true if want to change height of list Items-->
             <ListView.ItemTemplate>
                 <DataTemplate>

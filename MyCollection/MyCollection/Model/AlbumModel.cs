@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyCollection.Model
 {
-    class AlbumModel
+    public class AlbumModel
     {
         public string Title { get; set; }
         public string Artist { get; set; }
