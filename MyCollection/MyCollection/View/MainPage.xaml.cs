@@ -49,7 +49,7 @@ namespace MyCollection
                 //await Navigation.PushModalAsync(new ModalPage());
                 // to close Full screen modals
                 //await Navigation.PopModalAsync();
-                await Navigation.PushModalAsync(new AlbumInfoPage(avm));
+                await Navigation.PushModalAsync(new AlbumInfoPage(avm, false));
             }
         }
 
@@ -62,6 +62,12 @@ namespace MyCollection
             {
                 avm.CollectionName = result;
             }
+
+        }
+
+        private async void btnAdd_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new AlbumInfoPage(avm, true));
 
         }
     }

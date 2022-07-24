@@ -33,7 +33,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button 
+        <StackLayout Orientation="Horizontal">
+            <Button 
             x:Name="btnName"
             Text="N"
             HeightRequest="50"
@@ -45,6 +46,23 @@
             FontSize="24"
             FontAttributes="Bold"
             Clicked="btnName_Clicked"/>
+            <Button 
+            x:Name="btnAdd"
+            Text="+"
+            HeightRequest="50"
+            WidthRequest="50"
+            BackgroundColor="White"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            TextColor="Black"
+            FontSize="24"
+            FontAttributes="Bold"
+            Clicked="btnAdd_Clicked"/>
+
+
+        </StackLayout>
+        
     </StackLayout>
+    
 
 </ContentPage>

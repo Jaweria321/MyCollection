@@ -16,14 +16,28 @@ namespace MyCollection.View
     {
         AlbumViewModel avm;
         AlbumModel alb;
+        bool isNew;
 
-        public AlbumInfoPage(AlbumViewModel _avm)
+        public AlbumInfoPage(AlbumViewModel _avm, bool _isNew)
         {
             InitializeComponent();
 
             avm = _avm;
-            alb = avm.SelectedAlbum;
+            isNew = _isNew;
+            alb = new AlbumModel("", "", "", "", "");
+            if(isNew)
+            {
 
+            }
+            else
+            {
+
+                alb.Title = avm.SelectedAlbum.Title;
+                alb.Artist = avm.SelectedAlbum.Artist;
+                alb.Location = avm.SelectedAlbum.Location;
+                alb.Thumb = avm.SelectedAlbum.Genre;
+
+            }
             BindingContext = alb;
         }
 
@@ -34,7 +48,16 @@ namespace MyCollection.View
 
         private async void btnOk_Clicked(object sender, EventArgs e)
         {
-            avm.UpdatAlbum(alb);
+            if (isNew)
+            {
+                avm.InsertAlbum(alb);
+
+            }
+            else
+            {
+                avm.UpdatAlbum(alb);
+            }
+            
             await Navigation.PopModalAsync();
         }
     }

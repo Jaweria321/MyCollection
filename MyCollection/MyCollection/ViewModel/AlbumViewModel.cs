@@ -59,9 +59,16 @@ namespace MyCollection.ViewModel
 
             return true;
         }
-        
-        
-        
+
+        public bool InsertAlbum(AlbumModel alb)
+        {
+
+            AlbumList.Add(alb);
+            return true;
+        }
+
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void RaisePropertyChanged(string prop)
